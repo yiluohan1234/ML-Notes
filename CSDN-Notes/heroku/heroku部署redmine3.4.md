@@ -201,32 +201,32 @@ deploy 以后执行以下指令在 heroku 安裝 plugin
 heroku run rake redmine:plugins:migrate RAILS_ENV=production
 ```
 此时在网站的`管理`的插件中，可以看到安装的插件
-![](./slack.png)
+![](./pic/slack.png)
 
 
-![](./slack1.png)
+![](./pic/slack1.png)
 
-![](./slack2.png)
+![](./pic/slack2.png)
 
-![](./slack3.png)
+![](./pic/slack3.png)
 
-![](./slack4.png)
+![](./pic/slack4.png)
 
 将`Webhook URL`的地址写入`Slack URL`中，`Slack Channel`为你学则的channel（公共的需要添加#），`Slack Username`为你注册的昵称
 
 测试
-![](./slack5.png)
+![](./pic/slack5.png)
 
-![](./slack6.png)
+![](./pic/slack6.png)
 ## 四、用 Mailgun 的服务完成邮件功能
 备注： 如果用 mailgun 的免费账号 + redmine 用太凶的话，容易超过免费额度而被搬掉
 
 ### 1.前往 [Mailgun](https://www.mailgun.com/) 注册
 
-![](./mailgun.png)
+![](./pic/mailgun.png)
 
 ### 2.注册完成后，选择 "Domains"，点击默认的 domain
-![](./mailgun1.png)
+![](./pic/mailgun1.png)
 [Default SMTP Login」 & 「Default Password」 这两个是我们用来发邮件的站好和密码
 如果嫌密码太长，可以通过点击 "Manage SMTP credentials" 修改密码
 ![](./mailgun2.png)
