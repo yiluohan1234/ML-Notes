@@ -32,23 +32,23 @@ Apriori 算法优缺点
 ## 三、支持度、置信度（或可信度）和提升度
 
 **支持度**：就是一个或几个相互关联的事物在数据集中出现的次数占总数据集的比重。说白了就是一个或几个相互关联的事物出现的概率。如果我们想分析两个存在关联性的数据X和Y，则对应的支持度为:
-$$
-Support(X,Y)=\frac{num(Samples(X, Y))}{num(AllSamples)}
-$$
+
+![Support(X,Y)=\frac{num(Samples(X, Y))}{num(AllSamples)}](https://latex.codecogs.com/png.latex?Support%28X%2CY%29%3D%5Cfrac%7Bnum%28Samples%28X%2C%20Y%29%29%7D%7Bnum%28AllSamples%29%7D)
+
 **置信度**：表示一个事物出现的情况下，另外一个事物出现的概率，即条件概率。
-$$
-Confidence(Y \Rightarrow X)=P(X|Y)=P(XY)/P(Y)
-$$
+
+![Confidence(Y \Rightarrow X)=P(X|Y)=P(XY)/P(Y)](https://latex.codecogs.com/png.latex?Confidence%28Y%20%5CRightarrow%20X%29%3DP%28X%7CY%29%3DP%28XY%29/P%28Y%29)
+
 ​	也可以以此类推到多个数据的关联置信度，比如对于三个数据X，Y，Z,则X对于Y和Z的置信度为：
-$$
-Confidence(X\Rightarrow YZ)=P(YZ|X)=P(XYZ)/P(X)
-$$
+
+![Confidence(X\Rightarrow YZ)=P(YZ|X)=P(XYZ)/P(X)](https://latex.codecogs.com/png.latex?Confidence%28X%5CRightarrow%20YZ%29%3DP%28YZ%7CX%29%3DP%28XYZ%29/P%28X%29)
+
 ​	举个例子，在购物数据中，纸巾对应鸡爪的置信度为40%，支持度为1%。则意味着在购物数据中，总共有1%的用户既买鸡爪又买纸巾;同时买鸡爪的用户中有40%的用户购买纸巾。
 
 **提升度**：表示含有Y的条件下，同时含有X的概率，与X总体发生的概率之比，即:
-$$
-Lift((Y \Rightarrow X))=P(X|Y)/P(X)=Confidence(Y \Rightarrow X)/P(X)
-$$
+
+![Lift((Y \Rightarrow X))=P(X|Y)/P(X)=Confidence(Y \Rightarrow X)/P(X)](https://latex.codecogs.com/png.latex?Lift%28%28Y%20%5CRightarrow%20X%29%29%3DP%28X%7CY%29/P%28X%29%3DConfidence%28Y%20%5CRightarrow%20X%29/P%28X%29)
+
 ​	提升度大于1则![img](https://latex.codecogs.com/gif.latex?Y%5CRightarrow%20X)是有效的强关联规则， 提升度小于等于1则![img](https://latex.codecogs.com/gif.latex?Y%5CRightarrow%20X)是无效的强关联规则 。一个特殊的情况，如果X和Y独立，则有![img](https://latex.codecogs.com/gif.latex?Lift%28Y%5CRightarrow%20X%29%3D1)，因为此时![img](https://latex.codecogs.com/gif.latex?P%28X%7CY%29%3DP%28X%29)
 
 ​	一般来说，要选择一个数据集合中的频繁数据集，则需要自定义评估标准。最常用的评估标准是用自定义的支持度，或者是自定义支持度和置信度的一个组合。
